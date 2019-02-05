@@ -1,0 +1,13 @@
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: memcached-operator-long
+subjects:
+- kind: ServiceAccount
+  name: memcached-operator-long
+  # Replace this with the namespace the operator is deployed in.
+  namespace: REPLACE_NAMESPACE
+roleRef:
+  kind: ClusterRole
+  name: memcached-operator-long
+  apiGroup: rbac.authorization.k8s.io
